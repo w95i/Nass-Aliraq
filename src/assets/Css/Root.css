@@ -1,0 +1,7 @@
+:root{
+    --primary-color: rgba(22, 22, 22, 1);
+    --secondary-color: rgba(232, 121, 249, 1);
+    --btn-background: rgba(125, 66, 131, 1);
+    --text-color: rgba(255, 255, 255, 1);
+    --font-family: 'poppins', sans-serif;
+}
