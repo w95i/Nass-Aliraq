@@ -176,7 +176,7 @@ export default {
 
 .action_section .contact_btn:hover {
   background-color: var(--text-color);
-  color: var(--background-color);
+  color: var(--secondary-color);
   transform: scale(1.1);
 }
 
@@ -186,7 +186,7 @@ export default {
   padding: 12px 20px;
   border-radius: 200px;
   border: none;
-  background-color: var(--secondary-color);
+  background-color: var(--btn-background);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
