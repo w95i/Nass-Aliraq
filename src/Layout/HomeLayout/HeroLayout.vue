@@ -17,8 +17,8 @@
           you succeed. Let’s build something extraordinary together.
         </p>
         <div class="buttons">
-          <button class="primary">Join us</button>
-          <button class="secondary">Contact us</button>
+          <c-button buttonName="Join us" type="button" class="primary" />
+          <c-button buttonName="Contact us" type="button" class="secondary" />
         </div>
       </div>
       <div class="image_wrapper">
@@ -50,7 +50,7 @@ export default {
   left: 0;
   width: 100%;
   height: 200px;
-  box-shadow: inset 0px -70px 50px 9px rgb(0 0 0 / 91%);
+  box-shadow: inset 0px -70px 50px 9px var(--primary-color);
   z-index: 2;
   pointer-events: none;
 }
@@ -64,6 +64,7 @@ export default {
   padding: 3rem 88px 0;
   gap: 2rem;
   max-height: 900px;
+  animation: fadeInSlide 2s ease-out;
 }
 
 .content_wrapper {
@@ -76,6 +77,7 @@ export default {
 .content {
   width: 50%;
   font-family: var(--font-family);
+  animation: slideInFromLeft 2s ease-out;
 }
 
 .content h1 {
@@ -148,6 +150,7 @@ button.secondary:hover {
 .image_wrapper {
   width: 50%;
   text-align: end;
+  animation: slideInFromRight 2s ease-out;
 }
 
 .image_wrapper img {
@@ -165,6 +168,7 @@ button.secondary:hover {
   width: 50%;
   border-radius: 10px;
   overflow: hidden;
+  animation: fadeInSlide 2s ease-out;
 }
 
 .images .image2 {
@@ -223,6 +227,39 @@ button.secondary:hover {
 
   .images {
     display: none;
+  }
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 </style>
