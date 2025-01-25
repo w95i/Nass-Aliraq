@@ -100,7 +100,7 @@ export default {
 
 @media (max-width: 768px) {
   .our_services_container {
-  margin-top: 40px;
+  margin-top: 80px;
 }
 
   .services .service_item{

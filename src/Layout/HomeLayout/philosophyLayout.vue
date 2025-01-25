@@ -14,7 +14,11 @@
         </p>
       </div>
       <div class="content_number">
-        <div class="number_section" v-for="counter in counters" :key="counter.id">
+        <div
+          class="number_section"
+          v-for="counter in counters"
+          :key="counter.id"
+        >
           <h2>{{ counter.number }}</h2>
           <p>{{ counter.text }}</p>
         </div>
@@ -25,17 +29,17 @@
 
 <script>
 export default {
-    name: "PhilosophyLayout",
-    data() {
-        return {
-            counters: [
-                { id: 1 ,number: "1,200+" , text: "Clients" },
-                { id: 2 ,number: "20+", text: "Branches" },
-                { id: 3 ,number: "200+", text: "Number of Employees" },
-                { id: 4 ,number: "315+", text: "Sales Representative" },
-            ],
-        };
-    }
+  name: "PhilosophyLayout",
+  data() {
+    return {
+      counters: [
+        { id: 1, number: "1,200+", text: "Clients" },
+        { id: 2, number: "20+", text: "Branches" },
+        { id: 3, number: "200+", text: "Number of Employees" },
+        { id: 4, number: "315+", text: "Sales Representative" },
+      ],
+    };
+  },
 };
 </script>
 
@@ -132,5 +136,45 @@ export default {
   line-height: 26px;
   letter-spacing: -0.004em;
   color: #646a69;
+}
+
+@media (max-width: 768px) {
+  .philosophy_container {
+    padding: 82px 12px;
+  }
+
+  .philosophy_container .philosophy_content {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .philosophy_content .content_text {
+    width: 100%;
+    height: 100%;
+  }
+
+  .content_text h2 {
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 65px;
+  }
+
+  .content_text p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 22px;
+  }
+
+  .philosophy_content .content_number {
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .content_number .number_section {
+    width: 46%;
+  }
 }
 </style>

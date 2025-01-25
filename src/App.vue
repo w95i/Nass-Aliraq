@@ -4,6 +4,9 @@
       <NavbarLayout />
     </section>
     <router-view />
+    <section class="footer_section">
+
+    </section>
   </div>
 </template>
 
