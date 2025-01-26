@@ -5,17 +5,19 @@
     </section>
     <router-view />
     <section class="footer_section">
-
+      <FooterLayout />
     </section>
   </div>
 </template>
 
 <script>
 import NavbarLayout from "@/Layout/NavbarLayout";
+import FooterLayout from "./Layout/FooterLayout.vue";
 export default {
   name: "App",
   components: {
     NavbarLayout,
+    FooterLayout
   },
 };
 </script>

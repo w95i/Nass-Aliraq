@@ -4,7 +4,7 @@
       <img :src="logoImage" alt="logo-img" />
     </section>
     <section class="link_section">
-      <NavbarLinks :links="links" />
+      <NavbarLinks :links="formattedLinks" @navigate="scrollToSection" />
     </section>
     <section class="action_section">
       <c-button buttonName="Contact us" type="button" class="contact_btn" />
@@ -29,7 +29,7 @@
     </section>
     <section>
       <section :class="['link_section_mobile', { open: isMenuOpen }]">
-        <NavbarLinks :links="links" />
+        <NavbarLinks :links="formattedLinks" @navigate="scrollToSection" />
       </section>
     </section>
   </nav>
@@ -46,14 +46,24 @@ export default {
   data() {
     return {
       links: [
-        { name: "Home", path: "/" },
-        { name: "About", path: "/about" },
-        { name: "Contact", path: "/contact" },
+        { name: "Home", id: "hero_section" },
+        { name: "About Us", id: "about_us" },
+        { name: "Services", id: "our_services" },
+        { name: "Branches", id: "hero_section" },
+        { name: "Jobs", id: "hero_section", badge: 12 },
       ],
       isMenuOpen: false,
     };
   },
   computed: {
+    formattedLinks() {
+      return this.links.map((link) => ({
+        name: link.name,
+        path: `#${link.id}`, // Change `path` to `#id` for section navigation
+        id: link.id,
+        badge:link.badge
+      }));
+    },
     logoImage() {
       return require("@/assets/Images/logo.png");
     },
@@ -61,6 +71,13 @@ export default {
   methods: {
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
+    },
+    scrollToSection(sectionId) {
+      const section = document.querySelector(`.${sectionId}`);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+        this.isMenuOpen = false; // Close mobile menu after clicking
+      }
     },
   },
 };

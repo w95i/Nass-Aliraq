@@ -1,24 +1,26 @@
 <template>
   <div class="testimonial-section">
     <h2 class="section-title">Our clients opinions</h2>
-    <swiper
-      :modules="[Navigation, Pagination, Autoplay]"
-      :slides-per-view="1"
-      :space-between="60"
-      :loop="true"
-      :pagination="{ clickable: true }"
-      :navigation="true"
-      :breakpoints="{
-        640: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
-      }"
-      class="testimonial-carousel"
-    >
-      <swiper-slide v-for="client in testimonials" :key="client.id">
-        <ClientCard :testimonial="client" />
-      </swiper-slide>
-    </swiper>
+    <div class="swiper_container">
+      <swiper
+        :modules="[Navigation, Pagination, Autoplay]"
+        :slides-per-view="1"
+        :space-between="60"
+        :loop="true"
+        :pagination="{ clickable: true }"
+        :navigation="true"
+        :breakpoints="{
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }"
+        class="testimonial-carousel"
+      >
+        <swiper-slide v-for="client in testimonials" :key="client.id">
+          <ClientCard :testimonial="client" />
+        </swiper-slide>
+      </swiper>
+    </div>
   </div>
 </template>
   
@@ -98,6 +100,12 @@ export default {
   max-width: 100%;
 }
 
+.swiper_container{
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
 .swiper {
   overflow: visible;
 }
@@ -147,12 +155,12 @@ export default {
   }
 
   :deep(.swiper-button-prev),
-:deep(.swiper-button-next) {
-  top: auto;
-  bottom: -35px;
-  width: 36px;
-  height: 36px;
-}
+  :deep(.swiper-button-next) {
+    top: auto;
+    bottom: -35px;
+    width: 36px;
+    height: 36px;
+  }
 }
 </style>
   

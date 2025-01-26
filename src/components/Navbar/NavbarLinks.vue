@@ -1,8 +1,14 @@
 <template>
   <div class="links">
-    <router-link :to="link.path" v-for="link in links" :key="link.path">
+    <a
+      href="#"
+      v-for="link in links"
+      :key="link.id"
+      @click.prevent="$emit('navigate', link.id)"
+    >
       {{ link.name }}
-    </router-link>
+      <span v-if="link.badge !== ''" class="nav_badge">{{ link.badge }}</span>
+    </a>
   </div>
 </template>
 
@@ -32,20 +38,28 @@ export default {
   line-height: 24px;
   color: var(--text-color);
   font-family: var(--font-family);
+  cursor: pointer;
 }
 
-.links a.router-link-exact-active {
-  color: var(--secondary-color);
-}
 .links a:hover {
   color: var(--secondary-color);
 }
 
-@media (max-width: 768px) {
-    .links {
-        flex-direction: column;
-        gap: 16px;
-    }
+.nav_badge {
+  background-color: var(--btn-background);
+  color: var(--text-color);
+  border-radius: 15px;
+  width: 24px;
+  font-size: 10px;
+  display: inline-block;
+  text-align: center;
+  align-content: center;
 }
 
+@media (max-width: 768px) {
+  .links {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
 </style>

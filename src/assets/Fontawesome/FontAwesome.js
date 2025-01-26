@@ -1,6 +1,9 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faGoogle } from '@fortawesome/free-brands-svg-icons'
 import { faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
+import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 import { faBars, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
@@ -41,6 +44,9 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 library.add(faGoogle)
 library.add(faYoutube)
 library.add(faFacebook)
+library.add(faFacebookF)
+library.add(faInstagram)
+library.add(faLinkedin)
 library.add(faBars)
 library.add(faTrash)
 library.add(faPenToSquare)
